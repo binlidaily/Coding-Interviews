@@ -3,9 +3,11 @@
 #
 # [1] Two Sum
 #
+# @lc code=start
 from typing import List
 import collections
-# @lc code=start
+# Time: O(n)
+# Space: O(n)
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
         hash_table = collections.defaultdict()
