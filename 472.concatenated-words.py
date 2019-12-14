@@ -33,7 +33,8 @@ class Solution:
             # if self.dfs(prefix, words) and suffix in words:
             #     return True
         return False
-# Runtime: 388 ms, faster than 82.71%
-# Memory Usage: 16 MB, less than 75.00%
+# 44/44 cases passed (404 ms)
+# Your runtime beats 78.01 % of python3 submissions
+# Your memory usage beats 100 % of python3 submissions (15.9 MB)
 # @lc code=end
 
