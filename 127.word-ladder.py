@@ -7,6 +7,9 @@ import string
 from typing import List
 import collections
 # @lc code=start
+# 1. BFS
+# Time: O(nlogn)
+# Space: O(n)
 class Solution:
     def ladderLength(self, beginWord: str, endWord: str, wordList: List[str]) -> int:
         wordList = set(wordList)
@@ -26,5 +29,6 @@ class Solution:
                         queue.append((newWord, length+1))
                         visited.add(newWord)
         return 0
+
 # @lc code=end
 
