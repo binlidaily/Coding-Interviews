@@ -30,8 +30,9 @@ class Solution:
             else:
                 continue
         return max(dp)
-# Runtime: 56 ms, faster than 37.73%
-# Memory Usage: 12.9 MB, less than 100.00%
+# 230/230 cases passed (44 ms)
+# Your runtime beats 83.4 % of python3 submissions
+# Your memory usage beats 100 % of python3 submissions (12.9 MB)
 # @lc code=end
 
 print(Solution().longestValidParentheses('(()'))
