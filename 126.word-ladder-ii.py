@@ -80,8 +80,9 @@ class Solution:
                         queue.append((adj_w, path_list + [adj_w]))
                         level[adj_w] = level[word] + 1
         return res
-# Runtime: 348 ms, faster than 71.55%
-# Memory Usage: 17.7 MB, less than 8.33%
+# 39/39 cases passed (344 ms)
+# Your runtime beats 71.76 % of python3 submissions
+# Your memory usage beats 8.33 % of python3 submissions (17.6 MB)
 
             
 # @lc code=end
