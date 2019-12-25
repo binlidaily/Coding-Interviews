@@ -71,46 +71,46 @@ import collections
 # 3. String
 # Time: O(s+t)
 # Space: O(s+t)
-# class Solution:
-#     def isSubtree(self, s, t):
-#         return self.convert(t) in self.convert(s)
+class Solution:
+    def isSubtree(self, s, t):
+        return self.convert(t) in self.convert(s)
 
-#     def convert(self, s):
-#         return "^" + str(s.val) + "#" + self.convert(s.left) + self.convert(s.right) if s else "$"
+    def convert(self, s):
+        return "^" + str(s.val) + "#" + self.convert(s.left) + self.convert(s.right) if s else "$"
 # 176/176 cases passed (72 ms)
 # Your runtime beats 92.96 % of python3 submissions
 # Your memory usage beats 100 % of python3 submissions (13.5 MB)
 
 # 4. merkle
-class Solution:
-    def isSubtree(self, s, t):
-        # from hashlib import sha256
-        from hashlib import sha1
-        def hash_(x):
-            # S = sha256()
-            # S.update(x)
-            # return S.hexdigest()
-            m = sha1()
-            m.update(str.encode(s))
-            return m.hexdigest()
+# class Solution:
+#     def isSubtree(self, s, t):
+#         # from hashlib import sha256
+#         from hashlib import sha1
+#         def hash_(x):
+#             # S = sha256()
+#             # S.update(x)
+#             # return S.hexdigest()
+#             m = sha1()
+#             m.update(str.encode(s))
+#             return m.hexdigest()
             
-        def merkle(node):
-            if not node:
-                return '#'
-            m_left = merkle(node.left)
-            m_right = merkle(node.right)
-            node.merkle = hash_(m_left + str(node.val) + m_right)
-            return node.merkle
+#         def merkle(node):
+#             if not node:
+#                 return '#'
+#             m_left = merkle(node.left)
+#             m_right = merkle(node.right)
+#             node.merkle = hash_(m_left + str(node.val) + m_right)
+#             return node.merkle
             
-        merkle(s)
-        merkle(t)
-        def dfs(node):
-            if not node:
-                return False
-            return (node.merkle == t.merkle or 
-                    dfs(node.left) or dfs(node.right))
+#         merkle(s)
+#         merkle(t)
+#         def dfs(node):
+#             if not node:
+#                 return False
+#             return (node.merkle == t.merkle or 
+#                     dfs(node.left) or dfs(node.right))
                         
-        return dfs(s)
+#         return dfs(s)
 
 # @lc code=end
 
