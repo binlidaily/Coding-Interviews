@@ -5,9 +5,11 @@
 #
 
 # @lc code=start
+# Time: O(n)
+# Space: O(n)
 class Solution:
     def isValid(self, s: str) -> bool:
-        valid=dict(zip([')',"]","}"],["(","[","{"]))
+        valid=dict(zip([')', "]", "}"], ["(", "[", "{"]))
         s=list(s)
         stack=list()
         for i in range(len(s)):
