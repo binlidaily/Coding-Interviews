@@ -6,6 +6,8 @@
 
 # @lc code=start
 # Definition for a binary tree node.
+# Time: O(logn)
+# Space: O(1)
 # class TreeNode:
 #     def __init__(self, x):
 #         self.val = x
@@ -23,6 +25,8 @@ class Solution:
         if not root.left and not root.right and root.val == 0:
             return None
         return root
-
+# 28/28 cases passed (28 ms)
+# Your runtime beats 71.93 % of python3 submissions
+# Your memory usage beats 100 % of python3 submissions (12.6 MB)
 # @lc code=end
 
