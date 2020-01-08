@@ -5,6 +5,8 @@
 #
 import collections
 # @lc code=start
+# Time: O(n)
+# Space: O(n)
 # Definition for a binary tree node.
 # class TreeNode:
 #     def __init__(self, x):
@@ -54,6 +56,8 @@ class Codec:
 # Your Codec object will be instantiated and called as such:
 # codec = Codec()
 # codec.deserialize(codec.serialize(root))
-
+# 62/62 cases passed (76 ms)
+# Your runtime beats 46.43 % of python3 submissions
+# Your memory usage beats 100 % of python3 submissions (17.1 MB)
 # @lc code=end
 
