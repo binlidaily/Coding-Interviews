@@ -22,8 +22,9 @@ class Solution:
                     dp[i][j] = max(dp[i][j-1], dp[i-1][j])
         return dp[n1][n2]
         
-# Runtime: 440 ms, faster than 60.67%
-# Memory Usage: 21.3 MB, less than 100.00%
+# 37/37 cases passed (452 ms)
+# Your runtime beats 58.33 % of python3 submissions
+# Your memory usage beats 100 % of python3 submissions (21.5 MB)
         
 # @lc code=end
 
