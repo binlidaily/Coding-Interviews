@@ -5,6 +5,8 @@
 #
 
 # @lc code=start
+# Time: O(n)
+# Space: O(1)
 class Solution:
     def defangIPaddr(self, address: str) -> str:
         arr = list(address)
