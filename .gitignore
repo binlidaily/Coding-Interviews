@@ -6,6 +6,7 @@ __pycache__/
 .vscode/
 # C extensions
 *.so
+*.code-workspace
 
 # C++ extensions
 *.out
