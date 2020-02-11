@@ -25,8 +25,6 @@ class Solution:
             slow = slow.next
         if not fast:
             return slow.next
-        if slow.next == fast:
-            slow.next = None
         else:
             slow.next = slow.next.next
         return head
