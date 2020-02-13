@@ -20,6 +20,7 @@ class Solution:
 # 169/169 cases passed (104 ms)
 # Your runtime beats 18.37 % of python3 submissions
 # Your memory usage beats 6.52 % of python3 submissions (14.8 MB)
+
 # @lc code=end
 
 print(Solution().merge([[1,3],[2,6],[8,10],[15,18]]))
