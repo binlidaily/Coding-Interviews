@@ -56,4 +56,3 @@ class Solution:
 # Your runtime beats 81.31 % of python3 submissions
 # Your memory usage beats 22.73 % of python3 submissions (18.6 MB)
 # @lc code=end
-
