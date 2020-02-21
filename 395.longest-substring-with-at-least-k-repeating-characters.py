@@ -32,18 +32,63 @@ import collections
 
 # Time: O(n^2)
 # Space: O(n^2)
-class Solution:
-    def longestSubstring(self, s: str, k: int) -> int:
-        if len(s) < k:
-            return 0
-        for ch in set(s):
-            if s.count(ch) < k:
-                return max(self.longestSubstring(sub, k) for sub in s.split(ch))
-        return len(s)
+# class Solution:
+#     def longestSubstring(self, s: str, k: int) -> int:
+#         if len(s) < k:
+#             return 0
+#         for ch in set(s):
+#             if s.count(ch) < k:
+#                 return max(self.longestSubstring(sub, k) for sub in s.split(ch))
+#         return len(s)
 
 # 28/28 cases passed (28 ms)
 # Your runtime beats 88.94 % of python3 submissions
 # Your memory usage beats 85.71 % of python3 submissions (13 MB)
+
+# # Time: O(n^2)
+# # Space: O(n^2)
+# class Solution:
+#     def longestSubstring(self, s: str, k: int) -> int:
+#         stack = []
+#         stack.append(s)
+#         res = 0
+#         while stack:
+#             s = stack.pop()
+#             for ch in set(s):
+#                 if s.count(ch) < k:
+#                     stack.extend([sub for sub in s.split(ch)])
+#                     break
+#             else:
+#                 res = max(res, len(s))
+#         return res
+
+# 28/28 cases passed (28 ms)
+# Your runtime beats 88.94 % of python3 submissions
+# Your memory usage beats 100 % of python3 submissions (12.9 MB)
+
+# Time: O(n^2)
+# Space: O(n^2)
+class Solution:
+    def longestSubstring(self, s: str, k: int) -> int:
+        stack = []
+        stack.append(s)
+        res = 0
+        while stack:
+            s = stack.pop()
+            is_update = True
+            for ch in set(s):
+                if s.count(ch) < k:
+                    stack.extend([sub for sub in s.split(ch)])
+                    is_update = False
+                    break
+            if is_update:
+                res = max(res, len(s))
+        return res
+
+# 28/28 cases passed (20 ms)
+# Your runtime beats 99.89 % of python3 submissions
+# Your memory usage beats 100 % of python3 submissions (12.8 MB)
+
 # @lc code=end
 
 print(Solution().longestSubstring(s = "aaabb", k = 3))
