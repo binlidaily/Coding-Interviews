@@ -23,6 +23,7 @@ class Solution:
         n = len(nums)
         majority = 0
         for i in range(32):
+            # ith is 1
             mask = 1 << i
             count = 0
             for num in nums:
@@ -30,6 +31,7 @@ class Solution:
                     count += 1
             if count > n // 2:
                 majority |= mask
+            # else: the majority in ith position is 0, which is default value
         return majority if majority >> 31 == 0 else majority - (1 << 32)
 
 # 44/44 cases passed (172 ms)
