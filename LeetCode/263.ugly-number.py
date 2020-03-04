@@ -49,8 +49,44 @@
 #
 
 # @lc code=start
+# Time: O(n)
+# Space: O(1)
+# class Solution:
+#     def isUgly(self, num: int) -> bool:
+#         if num <= 0:
+#             return False
+        
+#         for d in [2, 3, 5]:
+#             while num % d == 0:
+#                 num /= d
+#         return True if num == 1 else False
+
+# 1012/1012 cases passed (32 ms)
+# Your runtime beats 46.09 % of python3 submissions
+# Your memory usage beats 100 % of python3 submissions (12.8 MB)
+
+# 2. Recurrence
+# Time: O(n)
+# Space: O(1)
 class Solution:
     def isUgly(self, num: int) -> bool:
-        
+        if num <= 0:
+            return False
+        if num == 1:
+            return True
+        if num % 2 == 0:
+            return self.isUgly(num / 2)
+        if num % 3 == 0:
+            return self.isUgly(num / 3)
+        if num % 5 == 0:
+            return self.isUgly(num / 5)
+        return False
+
+# 1012/1012 cases passed (28 ms)
+# Your runtime beats 76.39 % of python3 submissions
+# Your memory usage beats 100 % of python3 submissions (12.7 MB)
 # @lc code=end
 
+print(Solution().isUgly(6))
+print(Solution().isUgly(8))
+print(Solution().isUgly(14))
