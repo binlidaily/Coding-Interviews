@@ -39,6 +39,6 @@ class Solution:
                 visited.add(s[r])
                 r += 1
         return res
-        
+
 # @lc code=end
 
