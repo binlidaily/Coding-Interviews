@@ -3,23 +3,23 @@
 #
 # [78] Subsets
 #
-
+from typing import List
 # @lc code=start
 # Time: O(n^2)
 # Space: O(n)
-# class Solution:
-#     def subsets(self, nums: List[int]) -> List[List[int]]:
-#         if not nums:
-#             return []
-#         res = []
-#         self.dfs(nums, 0, [], res)
-#         return res
+class Solution:
+    def subsets(self, nums: List[int]) -> List[List[int]]:
+        if not nums:
+            return []
+        res = []
+        self.dfs(nums, 0, [], res)
+        return res
     
-#     def dfs(self, nums, start, path, res):
-#         res.append(path)
-#         n = len(nums)
-#         for i in range(start, n):
-#             self.dfs(nums, i+1, path+[nums[i]], res)
+    def dfs(self, nums, start, path, res):
+        res.append(path)
+        n = len(nums)
+        for i in range(start, n):
+            self.dfs(nums, i+1, path+[nums[i]], res)
 # 10/10 cases passed (32 ms)
 # Your runtime beats 91.37 % of python3 submissions
 # Your memory usage beats 100 % of python3 submissions (12.9 MB)
@@ -42,7 +42,7 @@
 # Your memory usage beats 100 % of python3 submissions (12.9 MB)
 
 # 3. bit manipulation
-class Solution(object):
+class Solution3(object):
     def subsets(self, nums):
         res = []
         nums.sort()
