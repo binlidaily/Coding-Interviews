@@ -11,7 +11,7 @@ class Solution:
 				res += sum(divisors)
 		return res
 
-	def countDivisors1(self, num):
+	def countDivisors(self, num):
 		return [i for i in range(1, num + 1) if num % i == 0]
 
 print(Solution().sumFourDivisors([21,4,7]), 32)
